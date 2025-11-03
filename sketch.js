@@ -1,35 +1,22 @@
-let posx;
-let posy;
-let diam;
-let rad;
-
-let velx;
-let vely;
+const NP = 200;
+let pelotas = [];
 
 function setup(){
     createCanvas(windowWidth, windowHeight);
+    rectMode(CENTER);
+  
+    for(let i = 0; i < NP; i++){
+        let nuevaPelota = new Pelota();
+        pelotas[i] = nuevaPelota;
+    }
+
    
-    diam = random(50, 300);
-    rad = diam/2;
-
-    posx=random(rad, width - rad);
-    posy=random(rad, height - rad);
-
-    velx= random(-5, 5);
-    vely= random(-5, 5);
 }
 
 function draw(){
     background(150);
-    posx += velx;
-    posy += vely;
-
-    if(posx>width - rad || posx< rad){
-        velx *= -1;
-    }
-     if(posy>height - rad || posy< rad){
-        vely *= -1;
-    }
-    
-    circle(posx, posy, diam);
+     for(let i = 0; i < NP; i++){
+        pelotas[i].actualizar();
+        pelotas[i].visualizar();
+    }   
 }
