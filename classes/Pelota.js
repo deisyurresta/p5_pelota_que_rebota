@@ -17,7 +17,7 @@ class Pelota{
         this.velx= random(-5, 5);
         this.vely= random(-5, 5);
 
-        this.nuevoColor = color(random(200, 10), random(250, 15), random(100, 150), 100);
+        this.nuevoColor = color(random(200, 200), random(250, 15), random(100, 150), 100);
     }
 
     actualizar(){
